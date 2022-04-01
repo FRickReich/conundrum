@@ -1,0 +1,26 @@
+name: DEV CI
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: develop
+    steps:
+      - name: Deploy NodeJS App
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.DEV_SSH_HOST}}
+          key: ${{secrets.DEV_SSH_KEY}}
+          username: ${{secrets.DEV_SSH_USERNAME}}
+          
+          script: |
+            cd ${{secrets.SERVICE_NAME}}
+            pm2 stop app
+            git pull
+            npm install
+            pm2 start "npm run start" --name "app"
+            echo 'Deloyment successful'
