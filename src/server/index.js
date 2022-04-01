@@ -2,22 +2,27 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 const cors = require('cors');
+
+const { logger } = require('./utils');
+
+const routes = require('./routes');
 
 const app = express();
 const port = process.env.SERVICE_PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/static', express.static(path.join(__dirname, '../../dist'), { index: false }));
+app.use(cookieParser());
 app.use(cors());
 
-app.get('/*', (req, res) =>
-{
-    res.status(200).sendFile( path.join(__dirname,'../../dist' , 'index.html'));
-});
+app.use('/static', express.static(path.join(__dirname, '../../dist'), { index: false }));
+// app.use('/api/users', routes.users);
+app.use('/*', routes.frontend);
 
 app.listen(port, () =>
 {
-    console.log(`Server läuft auf port ${ port }!`);
+    logger.info(`Server running on port ${ port }`);
 });
