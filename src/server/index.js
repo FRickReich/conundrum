@@ -9,11 +9,12 @@ const port = process.env.SERVICE_PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/static', express.static(path.join(__dirname, '../../dist'), { index: false }));
 app.use(cors());
 
-app.get('/', (req, res) =>
+app.get('/*', (req, res) =>
 {
-    res.status(200).sendFile(path.join(__dirname, '../public/index.html'));
+    res.status(200).sendFile( path.join(__dirname,'../../dist' , 'index.html'));
 });
 
 app.listen(port, () =>

@@ -2,11 +2,10 @@
   "name": "conundrum",
   "version": "1.0.0",
   "description": "A fast and easy invoice generator",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js",
-    "start:dev": "nodemon ./src/index.js"
+    "start:dev": "concurrently \"nodemon ./src/server/index.js\" \"parcel watch ./public/index.html --public-url ./static/\"",
+    "build": "parcel build ./public/index.html --public-url ./static/ ",
+    "start": "node ./src/server/index.js"
   },
   "keywords": [],
   "author": "F. Rick Reich",
@@ -14,10 +13,15 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "node-mailjet": "^3.3.7"
+    "express": "^4.17.3",
+    "node-mailjet": "^3.3.7",
+    "parcel": "^2.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
   },
