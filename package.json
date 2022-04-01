@@ -1,0 +1,32 @@
+{
+  "name": "conundrum",
+  "version": "1.0.0",
+  "description": "A fast and easy invoice generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "F. Rick Reich",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "node-mailjet": "^3.3.7"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FRickReich/conundrum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FRickReich/conundrum/issues"
+  },
+  "homepage": "https://github.com/FRickReich/conundrum#readme"
+}
