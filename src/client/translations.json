@@ -1,0 +1,64 @@
+{
+    "en":
+    {
+        "translation":
+        {
+            "home":
+            {
+                "header": "Homepage"
+            },
+            "auth":
+            {
+                "login":
+                {
+                    "header": "Login",
+                    "button": "Login",
+                    "message": {
+                        "text": "Already have an account?",
+                        "link": "Log in now!"
+                    }
+                },
+                "signup":
+                {
+                    "header": "Create new account",
+                    "button": "Sign Up",
+                    "message": {
+                        "text": "Dont have an account yet?",
+                        "link": "Sign up now!"
+                    }
+                }
+            }
+        }
+    },
+    "de":
+    {
+        "translation":
+        {
+            "home":
+            {
+                "header": "Homepage"
+            },
+            "auth":
+            {
+                "login":
+                {
+                    "header": "Einloggen",
+                    "button": "Einloggen",
+                    "message": {
+                        "text": "Sie haben schon einen Account?",
+                        "link": "Loggen sie sich ein!"
+                    }
+                },
+                "signup":
+                {
+                    "header": "Neuen Account erstellen",
+                    "button": "Anmelden",
+                    "message": {
+                        "text": "Sie haben noch keinen Account?",
+                        "link": "Registrieren sie sich jetzt!"
+                    }
+                }
+            }
+        }
+    }
+}

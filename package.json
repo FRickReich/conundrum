@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A fast and easy invoice generator",
   "scripts": {
-    "start:dev": "concurrently \"nodemon ./src/server/index.js\" \"parcel watch ./public/index.html --public-url ./static/\"",
-    "build": "parcel build ./public/index.html --public-url ./static/ ",
+    "start:dev": "concurrently \"nodemon ./src/server/index.js\" \"parcel watch ./public/index.html --public-url /static/\"",
+    "build": "parcel build ./public/index.html --public-url /static/ ",
     "start": "node ./src/server/index.js"
   },
   "keywords": [],
@@ -16,12 +16,15 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "i18next": "^21.6.14",
     "log4js": "^6.4.4",
     "mongoose": "^6.2.9",
     "node-mailjet": "^3.3.7",
     "parcel": "^2.4.1",
+    "pdfjs": "^2.4.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-i18next": "^11.16.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "sass": "^1.49.10"
@@ -30,7 +33,9 @@
     "@parcel/transformer-sass": "^2.4.1",
     "concurrently": "^7.0.0",
     "dotenv": "^16.0.0",
-    "nodemon": "^2.0.15"
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.15",
+    "process": "^0.11.10"
   },
   "repository": {
     "type": "git",
