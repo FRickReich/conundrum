@@ -14,7 +14,7 @@ const app = express();
 const port = process.env.SERVICE_PORT || 3000;
 const databaseUrl = String(process.env.DB_URL);
 
-mongoose.connect(databaseUrl, { replicaSet: 'rsNameHere', useNewUrlParser: true });
+mongoose.connect(databaseUrl, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
