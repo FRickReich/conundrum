@@ -12,7 +12,7 @@ const routes = require('./routes');
 
 const app = express();
 const port = process.env.SERVICE_PORT || 3000;
-const databaseUrl = String(process.env.DATABASE_URL);
+const databaseUrl = String(process.env.DB_URL);
 
 mongoose.connect(databaseUrl, { replicaSet: 'rsNameHere', useNewUrlParser: true });
 
